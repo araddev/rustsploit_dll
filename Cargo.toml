@@ -1,0 +1,13 @@
+[package]
+name = "rustsploitdll"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8.5"
+winapi = { version = "0.3", features = ["winuser", "libloaderapi","processthreadsapi"] }
+com = "0.6.0"
+libc = "0.2.140"
+
+[lib]
+crate-type = ["cdylib"]
