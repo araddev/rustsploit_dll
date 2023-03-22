@@ -1,5 +1,5 @@
 // the addresses
-const PRINT_ADDRESS: u32 = 0xCF8200;
+const PRINT_ADDRESS: u32 = 0x107ACC0;
 
 // the code that uses the address to print
 use std::{ffi::c_void, ptr::null_mut}; 
@@ -9,7 +9,7 @@ use std::ffi::*;
 use winapi::um::*;
 
 unsafe  fn x(x: u32) -> *mut c_void {
-    (x - 0 + (libloaderapi::GetModuleHandleA(0 as *const i8) as DWORD)) as *mut c_void
+    (x - 0x400000 + (libloaderapi::GetModuleHandleA(0 as *const i8) as DWORD)) as *mut c_void
 }
 
 type Rprint = extern fn(c_int, *const c_char) -> usize;
