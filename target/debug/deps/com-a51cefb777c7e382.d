@@ -1,0 +1,14 @@
+d:\Users\Arad\Desktop\RustLearning\dll\target\debug\deps\com-a51cefb777c7e382.rmeta: C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\lib.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\abi_transferable.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interface.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\mod.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iclass_factory.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iunknown.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\param.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\refcounting.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\runtime.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\sys.rs
+
+d:\Users\Arad\Desktop\RustLearning\dll\target\debug\deps\com-a51cefb777c7e382.d: C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\lib.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\abi_transferable.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interface.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\mod.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iclass_factory.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iunknown.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\param.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\refcounting.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\runtime.rs C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\sys.rs
+
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\lib.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\abi_transferable.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interface.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\mod.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iclass_factory.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\interfaces\iunknown.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\param.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\refcounting.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\runtime.rs:
+C:\Users\Arad\.cargo\registry\src\github.com-1ecc6299db9ec823\com-0.6.0\src\sys.rs:
