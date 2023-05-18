@@ -5,7 +5,7 @@ use std::ffi::*;
 use winapi::um::*;
 
 struct JVMClassLoader{
-env: JNIEnv;
+
 }
 
 fn attach_jvm() -> bool {
