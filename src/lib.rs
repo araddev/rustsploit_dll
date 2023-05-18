@@ -1,41 +1,31 @@
-// the addresses
-const PRINT_ADDRESS: u32 = 0x107ACC0;
-
-// the code that uses the address to print
-use std::{ffi::c_void, ptr::null_mut}; 
-use core::mem::transmute;
+use std::{ptr::null_mut}; 
+use jni::{sys::JNI_GetCreatedJavaVMs, JNIEnv, JavaVM};
 use winapi::{shared::minwindef::{BOOL, HMODULE, DWORD, LPVOID}, um::{winnt::{DLL_PROCESS_ATTACH, DLL_PROCESS_DETACH}}};
 use std::ffi::*;
 use winapi::um::*;
 
-unsafe fn x(x: u32) -> *mut c_void {
-    (x - 0x400000 + (libloaderapi::GetModuleHandleA(0 as *const i8) as DWORD)) as *mut c_void
+struct JVMClassLoader{
+env: JNIEnv;
 }
 
-type Rprint = extern fn(c_int, *const c_char) -> usize;
+fn attach_jvm() -> bool {
+    //if (JNI_GetCreatedJavaVMs(, bufLen, nVMs))
 
+return true;
+}
 
 unsafe extern "system" fn entry(r:LPVOID) -> DWORD {
-    let print: Rprint = transmute(x(PRINT_ADDRESS));
-    print(1, transmute(b"this is a string\0"));
-    print(1, transmute(b"printsploit winning\0"));
+    
     0
 }
 
 #[no_mangle]
 pub unsafe extern "system" fn DllMain( hModule:HMODULE, dw_reason:DWORD, lpReserved:LPVOID ) -> BOOL {
-    if (dw_reason == DLL_PROCESS_ATTACH) {
-            processthreadsapi::CreateThread(
-                null_mut(), 
-                10000000,
-                Some(entry), 
-                null_mut(),
-                0,
-                null_mut()
-            );
+    if dw_reason == DLL_PROCESS_ATTACH {
+            
     }
-    if (dw_reason == DLL_PROCESS_DETACH) {
-                //will probs have to put shit here later
+    if dw_reason == DLL_PROCESS_DETACH {
+    
     }
     1
 }
