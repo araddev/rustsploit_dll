@@ -15,8 +15,8 @@ pub fn print(type_val: u8, content: &str) -> c_int {
     }
 }
 
-pub fn PrintToRoblox(thingtoprint: &str, mut typeofprint: u8){
-    if typeofprint>3 && typeofprint<0 {
+pub fn print_to_roblox(thingtoprint: &str, mut typeofprint: u8){
+    if typeofprint>3 {
         typeofprint = 3;
     }
     print(typeofprint, &format!("{}", thingtoprint));

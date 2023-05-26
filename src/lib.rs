@@ -4,9 +4,9 @@ mod roblox;
 
 
 fn main_thread() {
-        roblox::PrintToRoblox("this is a string", 0);
-        roblox::PrintToRoblox("this is a cooler string", 1);
-        roblox::PrintToRoblox("this is a very cool string", 2);
+        roblox::print_to_roblox("this is a string", 0);
+        roblox::print_to_roblox("this is a cooler string", 1);
+        roblox::print_to_roblox("this is a very cool string", 2);
 }
 
 #[no_mangle]
