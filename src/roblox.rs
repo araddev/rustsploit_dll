@@ -1,16 +1,24 @@
-const PRINT_ADDRESS: u32 = 0x1AA1B60;
+use std::{ffi::{c_int, c_char}, time::Duration};
 
-use winapi::{um::libloaderapi, shared::minwindef::DWORD, ctypes::{c_void, c_int, c_char}};
-use core::mem::transmute;
-use std::i8;
-
-type Rprint = extern fn(c_int, *const c_char) -> usize;
-
-pub unsafe fn x(x: u32) -> *mut c_void {
-    (x - 0x400000 + (libloaderapi::GetModuleHandleA(0 as *const i8) as DWORD)) as *mut c_void
+pub fn x(address: usize) -> usize {
+    let base = unsafe { winapi::um::libloaderapi::GetModuleHandleA(std::ptr::null()) } as usize;
+    (address + base) - 0x400000
 }
 
-pub unsafe fn print(printstring: &[u8; 17]){ // i thought this was supposed to be a string and it wasnt and it took me so long to find that out :skull:
-    let print: Rprint = transmute(x(PRINT_ADDRESS));
-    print(1, transmute(printstring));
+pub fn print(type_val: u8, content: &str) -> c_int {
+    let address = x(0xEF9490);
+    unsafe {
+        let func_ptr: extern "C" fn(u8, *const c_char) -> i32 =
+            Some(std::mem::transmute(address)).unwrap();
+        let content_ptr = content.as_ptr() as *const c_char;
+        func_ptr(type_val, content_ptr)
+    }
+}
+
+pub fn PrintToRoblox(thingtoprint: &str, mut typeofprint: u8){
+    if typeofprint>2 && typeofprint<0 {
+        typeofprint = 2;
+    }
+    print(typeofprint, &format!("{}", thingtoprint));
+    std::thread::sleep(Duration::from_secs(1));
 }

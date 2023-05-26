@@ -1,31 +1,19 @@
-use std::{ptr::null_mut}; 
-use winapi::{shared::minwindef::{BOOL, HMODULE, DWORD, LPVOID}, um::{winnt::{DLL_PROCESS_ATTACH, DLL_PROCESS_DETACH}}};
-use std::ffi::*;
-use winapi::um::*;
-
+use std::ffi::c_void;
 mod roblox;
 
-type Rprint = extern fn(c_int, *const c_char) -> usize;
 
-unsafe extern "system" fn entry(r:LPVOID) -> DWORD {
-    roblox::print(b"this is a string\0");
-    0
+
+fn main_thread() {
+        roblox::PrintToRoblox("this is a string", 0);
+        roblox::PrintToRoblox("this is a cooler string", 1);
+        roblox::PrintToRoblox("this is a very cool string", 2);
 }
 
 #[no_mangle]
-pub unsafe extern "system" fn DllMain( hModule:HMODULE, dw_reason:DWORD, lpReserved:LPVOID ) -> BOOL {
-    if dw_reason == DLL_PROCESS_ATTACH {
-            processthreadsapi::CreateThread(
-                null_mut(), 
-                10000000,
-                Some(entry), 
-                null_mut(),
-                0,
-                null_mut()
-            );
-    }
-    if dw_reason == DLL_PROCESS_DETACH {
-               print!("what the fuck the dll detached");
+pub unsafe extern "system" fn DllMain( mod_handle: winapi::shared::minwindef::HINSTANCE, reason: u32, _: *mut c_void, ) -> i32 {
+    winapi::um::libloaderapi::DisableThreadLibraryCalls(mod_handle);
+    if reason == winapi::um::winnt::DLL_PROCESS_ATTACH {
+        main_thread();
     }
     1
 }
