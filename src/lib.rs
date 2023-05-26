@@ -1,4 +1,3 @@
-// the code that uses the address to print
 use std::{ptr::null_mut}; 
 use winapi::{shared::minwindef::{BOOL, HMODULE, DWORD, LPVOID}, um::{winnt::{DLL_PROCESS_ATTACH, DLL_PROCESS_DETACH}}};
 use std::ffi::*;

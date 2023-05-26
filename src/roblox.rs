@@ -1,4 +1,4 @@
-const PRINT_ADDRESS: u32 = 0x107ACC0;
+const PRINT_ADDRESS: u32 = 0x1AA1B60;
 
 use winapi::{um::libloaderapi, shared::minwindef::DWORD, ctypes::{c_void, c_int, c_char}};
 use core::mem::transmute;
