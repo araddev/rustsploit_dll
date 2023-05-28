@@ -6,20 +6,15 @@ pub fn x(address: usize) -> usize {
     (address + base) - 0x400000
 }
 
-pub fn print(type_val: u8, content: CString) -> c_int {
+pub unsafe fn print(type_val: u8, content: CString) -> c_int {
     let address = x(0xEF9490);
-    unsafe {
-        let func_ptr: extern "C" fn(u8, *const c_char) -> i32 =
-            Some(std::mem::transmute(address)).unwrap();
+        let func_ptr: extern "C" fn(u8, *const c_char) -> i32 = Some(std::mem::transmute(address)).unwrap();
         let content_ptr = content.as_ptr() as *const c_char;
         func_ptr(type_val, content_ptr)
-    }
 }
 
-pub fn print_to_roblox(thingtoprint: &str, mut typeofprint: u8){
-    if typeofprint>3 {
-        typeofprint = 3;
-    }
+pub unsafe fn print_to_roblox(thingtoprint: &str, mut typeofprint: u8){
+    if typeofprint>3 { typeofprint = 3; }
     print(typeofprint, convert_to_cstring(thingtoprint));
     std::thread::sleep(Duration::from_secs(1));
 }
